@@ -32,9 +32,6 @@ supported_commands_by_ecu:
   - 010D:VSS
   - 0121:MIL_DIST
   - 0130:WARM_UPS
-  - 0131:CLR_DIST
-  - 0142:VPWR
-  - 014E:CLR_TIME
 unsupported_commands_by_ecu:
   "710":
   - 710.718.22B921:MG_GWM_ODO
