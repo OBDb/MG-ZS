@@ -1,4 +1,333 @@
 { "commands": [
-
+{ "hdr": "710", "rax": "718", "cmd": {"22": "B921"}, "freq": 1, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+  "signals": [
+    {"id": "ZS_GWM_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "710", "rax": "718", "cmd": {"22": "D001"}, "freq": 4, "dbgfilter": { "to": 2022, "from": 2024 },
+  "signals": [
+    {"id": "ZS_GWM_STATUS", "path": "ECU", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Vehicle gateway status"}
+  ]},
+{ "hdr": "724", "rax": "72C", "dbg": true, "cmd": {"22": "B001"}, "freq": 15,
+  "signals": [
+    {"id": "ZS_TP_FL", "path": "Tires", "fmt": {           "len": 8, "max": 300, "mul": 4, "unit": "kilopascal" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "ZS_TP_FR", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 300, "mul": 4, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
+    {"id": "ZS_TP_RR", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 300, "mul": 4, "unit": "kilopascal" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
+    {"id": "ZS_TP_RL", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 300, "mul": 4, "unit": "kilopascal" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"}
+  ]},
+{ "hdr": "724", "rax": "72C", "dbg": true, "cmd": {"22": "B003"}, "freq": 15,
+  "signals": [
+    {"id": "ZS_TT_FL", "path": "Tires", "fmt": {           "len": 8, "max": 127.5, "div": 2, "unit": "celsius" }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "ZS_TT_FR", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 127.5, "div": 2, "unit": "celsius" }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "ZS_TT_RR", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 127.5, "div": 2, "unit": "celsius" }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"},
+    {"id": "ZS_TT_RL", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 127.5, "div": 2, "unit": "celsius" }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"}
+  ]},
+{ "hdr": "740", "dbg": true, "cmd": {"22": "E101"}, "freq": 30,
+  "signals": [
+    {"id": "ZS_BCM_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer, body control module"}
+  ]},
+{ "hdr": "740", "dbg": true, "cmd": {"22": "E209"}, "freq": 15,
+  "signals": [
+    {"id": "ZS_BCM_TP_FL", "path": "Tires", "fmt": {           "len": 8, "max": 510,             "mul": 2,             "unit": "kilopascal" }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "ZS_BCM_TP_FR", "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 510,             "mul": 2,             "unit": "kilopascal" }, "name": "Front right tire pressure",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "ZS_BCM_TP_RL", "path": "Tires", "fmt": {"bix": 16, "len": 8, "max": 510,             "mul": 2,             "unit": "kilopascal" }, "name": "Rear left tire pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "ZS_BCM_TP_RR", "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 510,             "mul": 2,             "unit": "kilopascal" }, "name": "Rear right tire pressure",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "ZS_BCM_TT_FL", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 195, "min": -60,           "add": -60, "unit": "celsius"    }, "name": "Front left tire temperature",  "suggestedMetric": "frontLeftTireTemperature"},
+    {"id": "ZS_BCM_TT_FR", "path": "Tires", "fmt": {"bix": 40, "len": 8, "max": 195, "min": -60,           "add": -60, "unit": "celsius"    }, "name": "Front right tire temperature", "suggestedMetric": "frontRightTireTemperature"},
+    {"id": "ZS_BCM_TT_RL", "path": "Tires", "fmt": {"bix": 48, "len": 8, "max": 195, "min": -60,           "add": -60, "unit": "celsius"    }, "name": "Rear left tire temperature",   "suggestedMetric": "rearLeftTireTemperature"},
+    {"id": "ZS_BCM_TT_RR", "path": "Tires", "fmt": {"bix": 56, "len": 8, "max": 195, "min": -60,           "add": -60, "unit": "celsius"    }, "name": "Rear right tire temperature",  "suggestedMetric": "rearRightTireTemperature"}
+  ]},
+{ "hdr": "750", "dbg": true, "cmd": {"22": "E00F"}, "freq": 0.25,
+  "signals": [
+    {"id": "ZS_BLOWER_SPD", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Blower speed"}
+  ]},
+{ "hdr": "750", "dbg": true, "cmd": {"22": "E013"}, "freq": 5,
+  "signals": [
+    {"id": "ZS_FL_FACE_OUTLET_T", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "celsius" }, "name": "FL face outlet temperature"}
+  ]},
+{ "hdr": "750", "dbg": true, "cmd": {"22": "E01B"}, "freq": 5,
+  "signals": [
+    {"id": "ZS_AAT_RAW_CNT", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Ambient temperature, raw count"}
+  ]},
+{ "hdr": "750", "dbg": true, "cmd": {"22": "E01C"}, "freq": 5,
+  "signals": [
+    {"id": "ZS_PTC_T", "path": "Engine", "fmt": { "len": 16, "max": 615, "min": -40, "div": 100, "add": -40, "unit": "celsius" }, "name": "Cabin heater temperature"}
+  ]},
+{ "hdr": "760", "dbg": true, "cmd": {"22": "B101"}, "freq": 30,
+  "signals": [
+    {"id": "ZS_ODO_READING_RAW_CNT", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "scalar" }, "name": "Odometer reading, raw count"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "B049"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MG_BMS", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Battery main relay B"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "B04A"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MG_BMS_SYSTEMMAINRELAYG", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Battery main relay G"}
+  ]},
+{ "hdr": "781", "dbg": true, "cmd": {"22": "B052"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MG_BMS_SYSTEMMAINRELAYP", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Battery main relay P"}
+  ]},
+{ "hdr": "785", "dbg": true, "cmd": {"22": "B022"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_DCDC_LV_CURRENT", "path": "Engine", "fmt": { "len": 16, "max": 32767, "min": -32768, "sign": true, "unit": "amps" }, "name": "DC-DC converter low-voltage current"}
+  ]},
+{ "hdr": "785", "dbg": true, "cmd": {"22": "B025"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_DCDC_POWER_LOAD", "path": "Engine", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "amps" }, "name": "DC-DC converter power load"}
+  ]},
+{ "hdr": "7DF", "rax": "7EC", "cmd": {"22": "B001"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_EVCC_CURRENT", "path": "Battery.EVCC", "fmt": { "len": 16, "max": 250, "div": 5, "add": -409.6, "unit": "amps" }, "name": "Current"}
+  ]},
+{ "hdr": "7DF", "rax": "7EC", "cmd": {"22": "B003"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_EVCC_MAX_CURRENT", "path": "Battery.EVCC", "fmt": { "len": 8, "max": 110.8695, "mul": 0.434782609, "unit": "amps" }, "name": "Max current"}
+  ]},
+{ "hdr": "7DF", "rax": "7EC", "cmd": {"22": "B00F"}, "freq": 4, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_EVCC_CHARGING", "path": "Battery.EVCC", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Charging"}
+  ]},
+{ "hdr": "7DF", "rax": "7EC", "cmd": {"22": "B010"}, "freq": 4, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+  "signals": [
+    {"id": "ZS_EVCC_VOLTAGE", "path": "Battery.EVCC", "fmt": { "len": 16, "max": 675.6185, "div": 97, "unit": "volts" }, "name": "Voltage"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B009"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU02_MINVOLT", "path": "Battery.Modules.02", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 02 min voltage"},
+    {"id": "ZS_HVBAT_CMU02_MAXVOLT", "path": "Battery.Modules.02", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 02 max voltage"},
+    {"id": "ZS_HVBAT_CMU02_MINTEMP", "path": "Battery.Modules.02", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 02 min temperature"},
+    {"id": "ZS_HVBAT_CMU02_MAXTEMP", "path": "Battery.Modules.02", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 02 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B011"}, "freq": 180, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU03_MINVOLT", "path": "Battery.Modules.03", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 03 min voltage"},
+    {"id": "ZS_HVBAT_CMU03_MAXVOLT", "path": "Battery.Modules.03", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 03 max voltage"},
+    {"id": "ZS_HVBAT_CMU03_MINTEMP", "path": "Battery.Modules.03", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 03 min temperature"},
+    {"id": "ZS_HVBAT_CMU03_MAXTEMP", "path": "Battery.Modules.03", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 03 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B019"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU04_MINVOLT", "path": "Battery.Modules.04", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 04 min voltage"},
+    {"id": "ZS_HVBAT_CMU04_MAXVOLT", "path": "Battery.Modules.04", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 04 max voltage"},
+    {"id": "ZS_HVBAT_CMU04_MINTEMP", "path": "Battery.Modules.04", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 04 min temperature"},
+    {"id": "ZS_HVBAT_CMU04_MAXTEMP", "path": "Battery.Modules.04", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 04 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B021"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU05_MINVOLT", "path": "Battery.Modules.05", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 05 min voltage"},
+    {"id": "ZS_HVBAT_CMU05_MAXVOLT", "path": "Battery.Modules.05", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 05 max voltage"},
+    {"id": "ZS_HVBAT_CMU05_MINTEMP", "path": "Battery.Modules.05", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 05 min temperature"},
+    {"id": "ZS_HVBAT_CMU05_MAXTEMP", "path": "Battery.Modules.05", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 05 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B029"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU06_MINVOLT", "path": "Battery.Modules.06", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 06 min voltage"},
+    {"id": "ZS_HVBAT_CMU06_MAXVOLT", "path": "Battery.Modules.06", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 06 max voltage"},
+    {"id": "ZS_HVBAT_CMU06_MINTEMP", "path": "Battery.Modules.06", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 06 min temperature"},
+    {"id": "ZS_HVBAT_CMU06_MAXTEMP", "path": "Battery.Modules.06", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 06 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B041"}, "freq": 30,
+  "signals": [
+    {"id": "ZS_HVBAT_BUS_VOLTAGE", "path": "Battery.Internal", "fmt": { "len": 16, "max": 1000, "div": 4, "unit": "volts" }, "name": "HV battery bus voltage"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B042"}, "freq": 0.25, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+  "signals": [
+    {"id": "ZS_HVBAT_VOLTAGE", "path": "Battery", "fmt": { "len": 16, "max": 500, "div": 4, "unit": "volts" }, "name": "HV battery voltage"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B043"}, "freq": 0.25, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 250, "div": 40, "add": -1000, "unit": "amps" }, "name": "HV battery current"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B045"}, "freq": 60, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+  "signals": [
+    {"id": "ZS_HVBAT_RESISTANCE", "path": "Battery.Internal", "fmt": { "len": 16, "max": 32767.5, "div": 2, "unit": "scalar" }, "name": "HV battery internal resistance"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B046"}, "freq": 30,
+  "signals": [
+    {"id": "ZS_HVBAT_RAW_SOC", "path": "Battery.Internal", "fmt": { "len": 16, "max": 100, "div": 10, "unit": "percent" }, "name": "HV battery raw charge", "description": "HV battery raw charge"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B048"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_HVBAT_CHARGING", "path": "Battery", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "yesno" }, "name": "HV battery is charging?", "suggestedMetric": "isCharging"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B056"}, "freq": 60, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_TEMP", "path": "Battery", "fmt": { "len": 8, "max": 87.5, "div": 2, "add": -40, "unit": "celsius" }, "name": "HV battery temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B05C"}, "freq": 60,
+  "signals": [
+    {"id": "ZS_HVBAT_COOLANT_TEMP", "path": "Battery", "fmt": { "len": 8, "max": 87.5, "div": 2, "add": -40, "unit": "celsius" }, "name": "HV battery coolant temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B061"}, "freq": 30, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_SOH", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "unit": "percent" }, "name": "HV battery health", "suggestedMetric": "stateOfHealth"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0A3"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU07_MINVOLT", "path": "Battery.Modules.07", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 07 min voltage"},
+    {"id": "ZS_HVBAT_CMU07_MAXVOLT", "path": "Battery.Modules.07", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 07 max voltage"},
+    {"id": "ZS_HVBAT_CMU07_MINTEMP", "path": "Battery.Modules.07", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 07 min temperature"},
+    {"id": "ZS_HVBAT_CMU07_MAXTEMP", "path": "Battery.Modules.07", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 07 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0AB"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU08_MINVOLT", "path": "Battery.Modules.08", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 08 min voltage"},
+    {"id": "ZS_HVBAT_CMU08_MAXVOLT", "path": "Battery.Modules.08", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 08 max voltage"},
+    {"id": "ZS_HVBAT_CMU08_MINTEMP", "path": "Battery.Modules.08", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 08 min temperature"},
+    {"id": "ZS_HVBAT_CMU08_MAXTEMP", "path": "Battery.Modules.08", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 08 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0B3"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU09_MINVOLT", "path": "Battery.Modules.09", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 09 min voltage"},
+    {"id": "ZS_HVBAT_CMU09_MAXVOLT", "path": "Battery.Modules.09", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 09 max voltage"},
+    {"id": "ZS_HVBAT_CMU09_MINTEMP", "path": "Battery.Modules.09", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 09 min temperature"},
+    {"id": "ZS_HVBAT_CMU09_MAXTEMP", "path": "Battery.Modules.09", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 09 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0BB"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU10_MINVOLT", "path": "Battery.Modules.10", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 10 min voltage"},
+    {"id": "ZS_HVBAT_CMU10_MAXVOLT", "path": "Battery.Modules.10", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 10 max voltage"},
+    {"id": "ZS_HVBAT_CMU10_MINTEMP", "path": "Battery.Modules.10", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 10 min temperature"},
+    {"id": "ZS_HVBAT_CMU10_MAXTEMP", "path": "Battery.Modules.10", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 10 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0C3"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU11_MINVOLT", "path": "Battery.Modules.11", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 11 min voltage"},
+    {"id": "ZS_HVBAT_CMU11_MAXVOLT", "path": "Battery.Modules.11", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 11 max voltage"},
+    {"id": "ZS_HVBAT_CMU11_MINTEMP", "path": "Battery.Modules.11", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 11 min temperature"},
+    {"id": "ZS_HVBAT_CMU11_MAXTEMP", "path": "Battery.Modules.11", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 11 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0CB"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU12_MINVOLT", "path": "Battery.Modules.12", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 12 min voltage"},
+    {"id": "ZS_HVBAT_CMU12_MAXVOLT", "path": "Battery.Modules.12", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 12 max voltage"},
+    {"id": "ZS_HVBAT_CMU12_MINTEMP", "path": "Battery.Modules.12", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 12 min temperature"},
+    {"id": "ZS_HVBAT_CMU12_MAXTEMP", "path": "Battery.Modules.12", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 12 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0DB"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU13_MINVOLT", "path": "Battery.Modules.13", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 13 min voltage"},
+    {"id": "ZS_HVBAT_CMU13_MAXVOLT", "path": "Battery.Modules.13", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 13 max voltage"},
+    {"id": "ZS_HVBAT_CMU13_MINTEMP", "path": "Battery.Modules.13", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 13 min temperature"},
+    {"id": "ZS_HVBAT_CMU13_MAXTEMP", "path": "Battery.Modules.13", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 13 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0DC"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU14_MINVOLT", "path": "Battery.Modules.14", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 14 min voltage"},
+    {"id": "ZS_HVBAT_CMU14_MAXVOLT", "path": "Battery.Modules.14", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 14 max voltage"},
+    {"id": "ZS_HVBAT_CMU14_MINTEMP", "path": "Battery.Modules.14", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 14 min temperature"},
+    {"id": "ZS_HVBAT_CMU14_MAXTEMP", "path": "Battery.Modules.14", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 14 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0DD"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU15_MINVOLT", "path": "Battery.Modules.15", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 15 min voltage"},
+    {"id": "ZS_HVBAT_CMU15_MAXVOLT", "path": "Battery.Modules.15", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 15 max voltage"},
+    {"id": "ZS_HVBAT_CMU15_MINTEMP", "path": "Battery.Modules.15", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 15 min temperature"},
+    {"id": "ZS_HVBAT_CMU15_MAXTEMP", "path": "Battery.Modules.15", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 15 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B0DE"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU16_MINVOLT", "path": "Battery.Modules.16", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 16 min voltage"},
+    {"id": "ZS_HVBAT_CMU16_MAXVOLT", "path": "Battery.Modules.16", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 16 max voltage"},
+    {"id": "ZS_HVBAT_CMU16_MINTEMP", "path": "Battery.Modules.16", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 16 min temperature"},
+    {"id": "ZS_HVBAT_CMU16_MAXTEMP", "path": "Battery.Modules.16", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 16 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B10E"}, "freq": 180, "dbgfilter": { "to": 2022, "from": 2024 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU17_MINVOLT", "path": "Battery.Modules.17", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 17 min voltage"},
+    {"id": "ZS_HVBAT_CMU17_MAXVOLT", "path": "Battery.Modules.17", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 17 max voltage"},
+    {"id": "ZS_HVBAT_CMU17_MINTEMP", "path": "Battery.Modules.17", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 17 min temperature"},
+    {"id": "ZS_HVBAT_CMU17_MAXTEMP", "path": "Battery.Modules.17", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 17 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B10F"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU18_MINVOLT", "path": "Battery.Modules.18", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 18 min voltage"},
+    {"id": "ZS_HVBAT_CMU18_MAXVOLT", "path": "Battery.Modules.18", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 18 max voltage"},
+    {"id": "ZS_HVBAT_CMU18_MINTEMP", "path": "Battery.Modules.18", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 18 min temperature"},
+    {"id": "ZS_HVBAT_CMU18_MAXTEMP", "path": "Battery.Modules.18", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 18 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B110"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU19_MINVOLT", "path": "Battery.Modules.19", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 19 min voltage"},
+    {"id": "ZS_HVBAT_CMU19_MAXVOLT", "path": "Battery.Modules.19", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 19 max voltage"},
+    {"id": "ZS_HVBAT_CMU19_MINTEMP", "path": "Battery.Modules.19", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 19 min temperature"},
+    {"id": "ZS_HVBAT_CMU19_MAXTEMP", "path": "Battery.Modules.19", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 19 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B111"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU20_MINVOLT", "path": "Battery.Modules.20", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 20 min voltage"},
+    {"id": "ZS_HVBAT_CMU20_MAXVOLT", "path": "Battery.Modules.20", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 20 max voltage"},
+    {"id": "ZS_HVBAT_CMU20_MINTEMP", "path": "Battery.Modules.20", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 20 min temperature"},
+    {"id": "ZS_HVBAT_CMU20_MAXTEMP", "path": "Battery.Modules.20", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 20 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B112"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU21_MINVOLT", "path": "Battery.Modules.21", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 21 min voltage"},
+    {"id": "ZS_HVBAT_CMU21_MAXVOLT", "path": "Battery.Modules.21", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 21 max voltage"},
+    {"id": "ZS_HVBAT_CMU21_MINTEMP", "path": "Battery.Modules.21", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 21 min temperature"},
+    {"id": "ZS_HVBAT_CMU21_MAXTEMP", "path": "Battery.Modules.21", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 21 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B113"}, "freq": 180, "dbgfilter": { "to": 2022, "from": 2024 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU22_MINVOLT", "path": "Battery.Modules.22", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 22 min voltage"},
+    {"id": "ZS_HVBAT_CMU22_MAXVOLT", "path": "Battery.Modules.22", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 22 max voltage"},
+    {"id": "ZS_HVBAT_CMU22_MINTEMP", "path": "Battery.Modules.22", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 22 min temperature"},
+    {"id": "ZS_HVBAT_CMU22_MAXTEMP", "path": "Battery.Modules.22", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 22 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "dbg": true, "cmd": {"22": "B114"}, "freq": 180,
+  "signals": [
+    {"id": "ZS_HVBAT_CMU23_MINVOLT", "path": "Battery.Modules.23", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 23 min voltage"},
+    {"id": "ZS_HVBAT_CMU23_MAXVOLT", "path": "Battery.Modules.23", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 23 max voltage"},
+    {"id": "ZS_HVBAT_CMU23_MINTEMP", "path": "Battery.Modules.23", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 23 min temperature"},
+    {"id": "ZS_HVBAT_CMU23_MAXTEMP", "path": "Battery.Modules.23", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 23 max temperature"}
+  ]},
+{ "hdr": "7DF", "rax": "7ED", "cmd": {"22": "B115"}, "freq": 180, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_HVBAT_CMU24_MINVOLT", "path": "Battery.Modules.24", "fmt": {           "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 24 min voltage"},
+    {"id": "ZS_HVBAT_CMU24_MAXVOLT", "path": "Battery.Modules.24", "fmt": {"bix": 16, "len": 16, "max": 10,   "div": 2000, "add": 1,   "unit": "volts"   }, "name": "HV battery module 24 max voltage"},
+    {"id": "ZS_HVBAT_CMU24_MINTEMP", "path": "Battery.Modules.24", "fmt": {"bix": 32, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 24 min temperature"},
+    {"id": "ZS_HVBAT_CMU24_MAXTEMP", "path": "Battery.Modules.24", "fmt": {"bix": 40, "len": 8,  "max": 87.5, "div": 2,    "add": -40, "unit": "celsius" }, "name": "HV battery module 24 max temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B034"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_EO_T", "path": "Engine", "fmt": { "len": 8, "max": 143.25, "min": -48, "mul": 0.75, "add": -48, "unit": "celsius" }, "name": "Engine oil temperature"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B036"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_EOP", "path": "Engine", "fmt": { "len": 16, "max": 1500.7515, "mul": 229, "div": 10000, "unit": "kilopascal" }, "name": "Engine oil pressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"22": "B043"}, "freq": 1, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "ZS_FUEL_TANK_LEVEL", "path": "Fuel", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "liters" }, "name": "Fuel tank level"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B140"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_KNOCK_SNS_V", "path": "Battery", "fmt": { "len": 8, "max": 5, "mul": 5, "div": 255, "unit": "volts" }, "name": "Knock sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B143"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MISFIRES_C1", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B144"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MISFIRES_C2", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B145"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MISFIRES_C3", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 3"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "B146"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_MISFIRES_C4", "path": "Engine", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfires, cylinder 4"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "1940"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_ATF_T_ECU_10513229", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, ECU 10513229"}
+  ]},
+{ "hdr": "7E1", "dbg": true, "cmd": {"22": "B423"}, "freq": 1,
+  "signals": [
+    {"id": "ZS_ATF_T_ECU_10472701_11194479", "path": "Engine", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature, ECU 10472701 and 11194479"}
+  ]}
 ]
 }
