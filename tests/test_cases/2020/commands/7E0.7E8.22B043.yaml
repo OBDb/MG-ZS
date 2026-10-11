@@ -1,0 +1,17 @@
+command_id: 7E0.7E8.22B043
+test_cases:
+- expected_values:
+    ZS_FUEL_TANK_LEVEL: 0
+  response: 7E80562B0430000
+- expected_values:
+    ZS_FUEL_TANK_LEVEL: 23
+  response: 7E80562B04300E6
+- expected_values:
+    ZS_FUEL_TANK_LEVEL: 31.3
+  response: 7E80562B0430139
+- expected_values:
+    ZS_FUEL_TANK_LEVEL: 1.5
+  response: |-
+    7E8064100BE3FA813
+    7E906410098188011
+    7E80562B043000F
