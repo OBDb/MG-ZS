@@ -1,9 +1,13 @@
-{ "commands": [
+{ "ecu": [
+    { "hdr": "7E0", "type": "engine" },
+    { "hdr": "7E1", "type": "transmission" }
+  ],
+  "commands": [
 { "hdr": "710", "rax": "718", "cmd": {"22": "B921"}, "freq": 1, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
   "signals": [
     {"id": "ZS_GWM_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "710", "rax": "718", "cmd": {"22": "D001"}, "freq": 4, "dbgfilter": { "to": 2022, "from": 2024 },
+{ "hdr": "710", "rax": "718", "cmd": {"22": "D001"}, "freq": 4, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
   "signals": [
     {"id": "ZS_GWM_STATUS", "path": "ECU", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Vehicle gateway status"}
   ]},

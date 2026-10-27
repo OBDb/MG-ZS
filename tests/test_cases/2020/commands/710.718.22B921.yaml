@@ -1,0 +1,7 @@
+command_id: 710.718.22B921
+test_cases:
+- expected_values:
+    ZS_GWM_ODO: 181845
+  response: |-
+    718100962B92102C655
+    71821000000AAAAAAAA
