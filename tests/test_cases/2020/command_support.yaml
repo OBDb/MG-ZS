@@ -7,6 +7,7 @@ supported_commands_by_ecu:
   - 7DF.0104
   - 7DF.0105
   - 7DF.0106
+  - 7DF.010C
   - 7DF.010D
   - 7DF.0110
   - 7DF.0111
@@ -140,6 +141,7 @@ unsupported_commands_by_ecu:
   - 7E0.0104:LOAD_PCT
   - 7E0.0105:ECT
   - 7E0.0106:SHRTFT1
+  - 7E0.010C:RPM
   - 7E0.010D:VSS
   - 7E0.0110:MAF
   - 7E0.0111:TP
@@ -159,6 +161,7 @@ unsupported_commands_by_ecu:
   - 7E1.221940:ZS_ATF_T_ECU_10513229
   - 7E1.22B423:ZS_ATF_T_ECU_10472701_11194479
   - 7E1.7E9.0104
+  - 7E1.7E9.010C
   - 7E1.7E9.010D
   - 7E1.7E9.0111
   "7E3":
